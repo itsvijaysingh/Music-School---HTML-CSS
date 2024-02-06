@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Music School</title>
+	<!-- Font Awesome CSS/CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+	/* Common/Global styles */
+	
+	body {
+		background-color: #d6f5f5;
+		;
+		width: 100%;
+		height: 100%;
+	}
+	
+	p {
+		color: #005266;
+	}
+	
+	.heading {
+		color: #005266;
+		font-family: Chiller;
+		font-size: 45px;
+	}
+	
+	.content {
+		color: #005266;
+		font-family: Chiller;
+	}
+	
+	.text-shadow {
+		text-shadow: 4px 5px 5px #248f8f;
+	}
+	
+	.center {
+		text-align: center;
+	}
+	/* Header styles */
+	
+	header {
+		background: linear-gradient(to right, #99ebff, #1ad1ff, #99ebff, #1ad1ff, #99ebff);
+		color: #fff;
+		width: 99%;
+		height: 51px;
+		top: 0;
+		display: flex;
+		border-top: 2px inset black;
+		position: fixed;
+		z-index: 1;
+	}
+	
+	header .logo {
+		display: flex;
+		width: 25%;
+	}
+	
+	header .logo i {
+		padding: 8px;
+		color: white;
+		font-size: 37px;
+	}
+	
+	header .logo span {
+		font-size: 28px;
+	}
+	
+	header .logo span::first-letter {
+		padding: 8px;
+		font-size: 34px;
+		font-family: 'Caveat', cursive;
+		color: #005266;
+	}
+	
+	header ul {
+		list-style: none;
+		margin: 0;
+		margin-left: 12%;
+		padding: 15px;
+		font-size: 20px;
+	}
+	
+	header li {
+		display: inline-block;
+		margin-right: 26px;
+	}
+	
+	header li i {
+		display: inline-block;
+		margin-right: 6px;
+	}
+	
+	header a {
+		color: #fff;
+		text-decoration: none;
+	}
+	
+	header ul li a:hover {
+		text-decoration: underline;
+		color: black;
+		text-shadow: 4px 5px 5px white;
+	}
+	
+	.search-form {
+		padding: 15px;
+		padding-bottom: 20px;
+		display: flex;
+		align-items: center;
+	}
+	
+	.search-form input {
+		margin-top: 7px;
+		width: 200px;
+		height: 22px;
+		border: 2px solid white;
+		border-radius: 4px;
+		background: transparent;
+		padding: 5px;
+		position: relative;
+	}
+	
+	.search-form input::placeholder {
+		color: white;
+		padding-left: 5px;
+	}
+	
+	.search-form i {
+		font-size: 15px;
+		margin-left: -28px;
+	}
+	/* Hero/Banner/Top Section */
+	
+	.home {
+		background: url(images/bg1.png);
+		width: 99%;
+		height: 600px;
+		margin-top: -80px;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	
+	.home h1 {
+		font-size: 200px;
+		padding-left: 50px;
+	}
+	
+	.home p {
+		font-size: 40px;
+		margin-top: -100px;
+		margin-left: 50px;
+	}
+	/* About Section Styles */
+	
+	.about {
+		width: 99%;
+		margin-top: -30px;
+		background: radial-gradient(white, #47d1d1, #85e0e0, #85e0e0, #d6f5f5, #85e0e0, #47d1d1);
+		height: 520px;
+	}
+	
+	.about h1 {
+		padding-top: 25px;
+		word-spacing: 10px;
+	}
+	
+	.about p {
+		justify-content: center;
+		font-family: Comic Sans MS;
+		margin-left: 190px;
+		margin-right: 190px;
+		font-size: 18px;
+	}
+	/* Classes Price Section Styles */
+	
+	.classes {
+		text-align: center;
+	}
+	
+	.classes div {
+		cursor: pointer;
+		display: inline-block;
+		width: 23%;
+		height: 390px;
+		text-align: center;
+		margin: 40px;
+		background: radial-gradient(white, #47d1d1, #85e0e0, #85e0e0, #d6f5f5, #85e0e0, #47d1d1);
+		box-shadow: 2px 2px 5px black;
+	}
+	
+	.classes div img {
+		height: 200px;
+		width: 270px;
+		margin-top: 20px;
+	}
+	
+	.classes div p {
+		color: black;
+		font-family: calibri;
+		font-size: 19px;
+		padding-left: 30px;
+		text-align: left;
+	}
+	
+	.classes div:hover {
+		transform: scale(1.1, 1.1);
+	}
+	
+	.classes button {
+		height: 35px;
+		width: 90px;
+		border-radius: 20px;
+		color: white;
+		background: #248f8f;
+		border: 2px solid black;
+	}
+	
+	.classes button:hover {
+		color: black;
+		background: #47d1d1;
+	}
+	/* Gallery/Images Section Styles */
+	
+	.gallery img {
+		height: 152px;
+		width: 202px;
+		border: 2px solid black;
+		opacity: 0.8;
+	}
+	
+	.gallery img:hover {
+		cursor: crosshair;
+		opacity: 1;
+		transform: scale(1.2, 1.2);
+		transition: ease-in-out 2s;
+	}
+	/* Footer Section Styles */
+	
+	.footer {
+		margin-bottom: 40px;
+	}
+	
+	.footer table tr th {
+		color: #005266;
+		text-align: left;
+	}
+	
+	.footer table tr input {
+		width: 500px;
+		background: #4ddbff;
+		border: 2px solid #4ddbff;
+	}
+	
+	.footer table tr input[type="file"] {
+		width: 504px;
+	}
+	
+	.footer table tr input[type="radio"] {
+		width: 106px;
+	}
+	
+	.footer table tr input[type="submit"] {
+		height: 30px;
+		width: 100px;
+		color: white;
+		background: #005266;
+		border: 2px solid black;
+		border-radius: 20px;
+	}
+	
+	.footer table tr input[type="submit"]:hover {
+		color: black;
+		background: #99ebff;
+		border: 2px solid black;
+		border-radius: 20px;
+	}
+	
+	.footer-icons {
+		text-align: center;
+	}
+	
+	.footer-icons i {
+		font-size: 35px;
+		color: #005266;
+		padding: 10px 10px;
+	}
+	
+	.fa-square-instagram:hover {
+		color: pink;
+	}
+	
+	.fa-square-twitter:hover {
+		color: blue;
+	}
+	
+	.fa-square-pinterest:hover {
+		color: red;
+	}
+	
+	.fa-square-whatsapp:hover {
+		color: green;
+	}
+	
+	.fa-square-snapchat:hover {
+		color: yellow;
+	}
+	
+	.footer-hr {
+		width: 90%;
+		font-size: 30px;
+	}
+	/* Copyright Information Text INfo */
+	
+	.copyright-text {
+		text-align: center;
+	}
+	
+	.copyright-text a {
+		text-decoration: none;
+	}
+	</style>
+</head>
+
+<body>
+	<!-- Header -->
+	<header>
+		<!-- Logos -->
+		<div class="logo"> <i class="fa-brands fa-napster"></i> <span>Music </span><span>School</span> </div>
+		<!-- Menu items -->
+		<ul>
+			<li><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
+			<li><a href="#about"><i class="fa-solid fa-circle-info"></i>About</a></li>
+			<li><a href="#classes"><i class="fa-solid fa-tags"></i>Classes</a></li>
+			<li><a href="#gallery"><i class="fa-regular fa-images"></i>Gallery</a></li>
+			<li><a href="#contact"><i class="fa-regular fa-envelope"></i>Contact</a></li>
+		</ul>
+		<!-- Header Search Bar -->
+		<div class="search-form">
+			<a href="#">
+				<input type="text" placeholder="Search DJ..." /><i class="fas fa-search fa-lg"></i></a>
+		</div>
+	</header>
+	<!-- Banner/Hero -->
+	<div class="home" id="home">
+		<h1 class="heading">Music School</h1>
+		<p class="content"> “Musical training is a more potent instrument than any other, because
+			<br>rhythm and harmony find their way into the
+			<br>inward places of the soul.”
+			<br> “Without music, life would be a mistake.”</p>
+	</div>
+	<!-- About Us -->
+	<div class="about" id="about">
+		<h1 class="heading text-shadow center">ABOUT  US</h1>
+		<p class="content">Mumbai Music Institute is located at the heart of the Music Industry. The courses which we offer is creatively designed keeping the evolving technology in mind, which help the students receive the best education required to prosper in the music industry. Certainly, the sense of individualism is strong at MMI, as we believe in giving personal attention to each and every students & is not limited to the duration of the course.
+			<br>
+			<br> Students of MMI are frequently engaged with the top artists of the industry and learn all the tricks & bricks from the faculty itself who are professionals in the music industry with years of experience and unparalleled knowledge of the technical know-hows in the industry.
+			<br>
+			<br> The exposed atmosphere of MMI can be of great benefit to the aspiring musician & especially for someone who is little confused with the future prospects. We give not only an excellent and unparalleled music degree but also a real time experience through our little initiatives like Workshops, Super Saturdays, MMI Connect, & rehearsals at MMI Stage Jam Room. Under MMI’s expert guidance we aim to groom our students and shape their creativity. We strive to create world class music professionals.</p>
+	</div>
+	<!-- Classrs Price Informations -->
+	<div class="classes" id="classes">
+		<h1 class="heading text-shadow center">CLASSES PRICE</h1>
+		<div> <img src="images/Learning_Guitar.jpg">
+			<p> <b>Learning Guitar in Learing</b>
+				<br> Learn in-demand skills
+				<br> <b>Rs.499 </b> For 1month
+				<br>
+				<br>
+				<button>Buy</button>
+			</p>
+		</div>
+		<div> <img src="images/Music_Composition.jpg">
+			<p> <b>Music Composition</b>
+				<br> Learn in-demand skills
+				<br> <b>Rs.499</b> For 1month
+				<br>
+				<br>
+				<button>Buy</button>
+			</p>
+		</div>
+		<div> <img src="images/Learning_KeyBoard_Instrument.jpg">
+			<p> <b>Learning KeyBoard Instrument</b>
+				<br> Learn in-demand skills
+				<br> <b>Rs.499</b> For 1month
+				<br>
+				<br>
+				<button>Buy</button>
+			</p>
+		</div>
+		<div> <img src="images/Music_Production.jpg">
+			<p> <b>Music Production</b>
+				<br> Learn in-demand skills
+				<br> <b>Rs.499</b> For 1month
+				<br>
+				<br>
+				<button>Buy</button>
+			</p>
+		</div>
+		<div> <img src="images/Music_Theory.jpg">
+			<p> <b>Music Theory</b>
+				<br> Learn in-demand skills
+				<br> <b>Rs.499</b> For 1month
+				<br>
+				<br>
+				<button>Buy</button>
+			</p>
+		</div>
+		<div> <img src="images/Music_Mixing.jpg">
+			<p> <b>Music Mixing</b>
+				<br> Learn in-demand skills
+				<br> <b>Rs.499</b> For 1month
+				<br>
+				<br>
+				<button>Buy</button>
+			</p>
+		</div>
+	</div>
+	<!-- Gallery/Memories Section -->
+	<div class="gallery" id="gallery">
+		<h1 class="heading text-shadow center">GALLERY</h1>
+		<table cellspacing="50px">
+			<tr>
+				<td><img src="images/img1.jpg" /></td>
+				<td><img src="images/img2.jpg" /></td>
+				<td><img src="images/img3.jpg" /></td>
+				<td><img src="images/img4.jpg" /></td>
+				<td><img src="images/img5.jpg" /></td>
+			</tr>
+			<tr>
+				<td><img src="images/img6.jpg" /></td>
+				<td><img src="images/img7.jpg" /></td>
+				<td><img src="images/img8.jpg" /></td>
+				<td><img src="images/img9.jpg" /></td>
+				<td><img src="images/img10.jpg" /></td>
+			</tr>
+		</table>
+	</div>
+	<!-- Footer -->
+	<div class="footer" id="contact">
+		<!-- Contact Form -->
+		<h1 class="heading text-shadow center">CONTACT</h1>
+		<div>
+			<table align="center">
+				<form>
+					<tr>
+						<th>
+							<label>Name</label>
+						</th>
+						<th>
+							<input type="text" name="Name" required placeholder="Enter Your Name...">
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<label>Father's Name</label>
+						</th>
+						<th>
+							<input type="text" name="FName" required placeholder="Enter Your Father Name...">
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<label>Mobile</label>
+						</th>
+						<th>
+							<input type="tel" name="Mobile" required placeholder="Enter Your Mobile No.">
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<label>Email</label>
+						</th>
+						<th>
+							<input type="Email" name="Email" required placeholder="Enter Your Email Address">
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<label>Upload Images</label>
+						</th>
+						<th>
+							<input type="file" name="file" required/>
+						</th>
+					</tr>
+					<tr>
+						<th>State</th>
+						<th bgcolor="#4ddbff">
+							<input type="radio" name="State" id="raj" checked />
+							<label for="raj">Raj</label>
+							<input type="radio" name="State" id="mp" />
+							<label for="mp">MP</label>
+							<input type="radio" name="State" id="up" />
+							<label for="up">UP</label>
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<label>Age</label>
+						</th>
+						<th align="left">
+							<input type="number" name="Age" min="18" max="50">
+						</th>
+					</tr>
+					<tr>
+						<th></th>
+						<td>
+							<input type="submit" name="submit" class="submit-button">
+						</td>
+					</tr>
+				</form>
+			</table>
+		</div>
+	</div>
+	<!-- Social Media Handle Links -->
+	<div class="footer-icons"> <i class="fa-brands fa-square-instagram"></i> <i class="fa-brands fa-square-twitter"></i> <i class="fa-brands fa-square-pinterest"></i> <i class="fa-brands fa-square-whatsapp"></i> <i class="fa-brands fa-square-snapchat"></i> </div>
+	<!-- Horizontal Row -->
+	<hr class="footer-hr" />
+	<!-- Copyright Informations -->
+	<div class="copyright-text">
+		<p>Made with <span style="color: red;">❤</span> by Vijay Singh</p>
+		<p>Copyright &copy; 2023 <a href="/">Musical School</a>. All Rights Reserved.</p>
+	</div>
+	</div>
+	</div>
+</body>
+
+</html>
